@@ -47,9 +47,14 @@ export default function Projects() {
               <div className="flex flex-col gap-4">
                 <PipelineDiagram steps={project.pipeline} />
                 <div className="flex gap-4 font-mono text-xs text-muted">
-                  <a href={project.repoUrl} target="_blank" rel="noreferrer" className="hover:text-ink underline underline-offset-4">
-                    Repo
-                  </a>
+                  {project.repoUrl && (
+                    <a href={project.repoUrl} target="_blank" rel="noreferrer" className="hover:text-ink underline underline-offset-4">
+                      Repo
+                    </a>
+                  )}
+                  {!project.repoUrl && (
+                    <span>Private repo</span>
+                  )}
                   {project.demoUrl && (
                     <a href={project.demoUrl} target="_blank" rel="noreferrer" className="hover:text-ink underline underline-offset-4">
                       Demo video

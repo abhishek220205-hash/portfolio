@@ -15,7 +15,7 @@ export default function Hero() {
         </p>
 
         <p className="font-body text-lg md:text-xl text-muted max-w-2xl mt-6 leading-relaxed">
-          I turn AI models into working products \u2014 pipelines that actually
+          I turn AI models into working products — pipelines that actually
           hold together, on real devices, under real constraints.
         </p>
 

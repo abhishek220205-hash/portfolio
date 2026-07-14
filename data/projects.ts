@@ -18,7 +18,7 @@ export type Project = {
   year: string;
   role: string;
   stack: string[];
-  repoUrl: string;
+  repoUrl?: string;
   demoUrl?: string;
   pipeline: PipelineStep[];
   problem: string;
@@ -143,6 +143,86 @@ export const projects: Project[] = [
       'Submitted for HackHazards 2026 on the Sarvam AI and Expo tracks, entered under Theme 01 (primary) and Theme 09 (secondary).',
     whatILearned:
       'Package format mismatches and hard API limits (like a 500-character TTS cap) shape an architecture just as much as model choice does \u2014 and they\u2019re the kind of thing you only catch by testing on a real device, not an emulator.',
+  },
+  {
+    slug: 'mindscribe',
+    name: 'MindScribe',
+    tagline: 'An AI note-taking tool that replaces typing with voice',
+    status: 'Personal project · private repo',
+    year: '2025',
+    role: 'Solo builder',
+    stack: ['TypeScript', 'Gemini 2.5 Flash API'],
+    pipeline: [
+      { label: 'Capture', detail: 'Voice input replaces manual note-taking' },
+      { label: 'Process', detail: 'Gemini 2.5 Flash converts speech and meeting notes into text' },
+      { label: 'Structure', detail: 'Output becomes organized, readable notes' },
+    ],
+    problem:
+      'Typing notes during a live conversation or meeting means choosing between paying attention and writing things down.',
+    targetUser:
+      'Anyone who wants to capture notes or meeting content without stopping to type \u2014 built primarily to solve this for myself.',
+    myRole:
+      'Solo, end to end: the voice capture flow, the Gemini 2.5 Flash integration, and the real-time processing logic in TypeScript.',
+    process: [
+      'Built the voice input capture layer first, since that\u2019s the piece that replaces typing entirely.',
+      'Integrated Gemini 2.5 Flash to process unstructured voice recordings and meeting notes.',
+      'Wrote the real-time processing logic in TypeScript to convert speech into organized text as it comes in, rather than only after a recording finishes.',
+    ],
+    keyDecisions: [
+      {
+        decision: 'Gemini 2.5 Flash over a larger, slower model',
+        reasoning:
+          'Note-taking needs to feel closer to real time than a heavier-reasoning model would allow.',
+      },
+    ],
+    finalResult:
+      'A working TypeScript tool, kept in a private repo, that converts voice input into structured notes end to end.',
+    whatILearned:
+      'Integrating a third-party AI API into a real-time flow surfaces different constraints than a request-response chatbot does \u2014 latency and streaming matter as much as accuracy.',
+  },
+  {
+    slug: 'web-scraper-quotes',
+    name: 'Quotes Web Scraper',
+    tagline: 'A Python scraper that extracts and structures quote data from the web',
+    status: 'Open-source personal project',
+    year: '2026',
+    role: 'Solo builder',
+    stack: ['Python'],
+    repoUrl: 'https://github.com/abhishek220205-hash/web-scraper-quotes',
+    pipeline: [
+      { label: 'Fetch', detail: 'Requests pages from the target site' },
+      { label: 'Parse', detail: 'Extracts quote data out of the raw HTML' },
+      { label: 'Structure', detail: 'Outputs clean, structured data' },
+    ],
+    problem:
+      'Quote data on the web sits inside raw HTML \u2014 readable to a person, but not directly usable as data.',
+    targetUser:
+      'Anyone who needs quote data in a structured, usable format rather than scattered across web pages.',
+    myRole: 'Solo \u2014 wrote the scraping and parsing pipeline in Python.',
+    process: [
+      'Built a Python scraper to fetch pages from the target site.',
+      'Wrote parsing logic to extract and structure the quote data out of the raw HTML.',
+      'Published the project open-source on GitHub.',
+    ],
+    keyDecisions: [
+      {
+        decision: 'Python for the scraping pipeline',
+        reasoning:
+          'Python\u2019s scraping and parsing libraries made it the fastest path from raw HTML to structured data.',
+      },
+    ],
+    finalResult:
+      'A published, open-source Python scraper that extracts and structures quote data from websites.',
+    whatILearned:
+      'Hands-on practice with data collection and parsing pipelines \u2014 a different, more foundational skill set than the AI-pipeline work in the other projects.',
+  },
+];
+
+export const certifications = [
+  {
+    name: 'Startup School: Prompt to Prototype',
+    issuer: 'Google for Startups',
+    date: 'January 2026',
   },
 ];
 

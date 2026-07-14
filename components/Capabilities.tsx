@@ -6,7 +6,7 @@ export default function Capabilities() {
       <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
         <p className="eyebrow mb-4">How I build</p>
         <h2 className="font-display font-semibold text-3xl md:text-5xl tracking-tight mb-14 md:mb-20 max-w-2xl">
-          Not a skills list \u2014 the actual method behind both builds.
+          Not a skills list — the actual method behind both builds.
         </h2>
 
         <div className="grid sm:grid-cols-2 gap-px bg-line border border-line rounded-sm overflow-hidden">

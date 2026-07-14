@@ -24,7 +24,7 @@ export default function Contact() {
       <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
         <p className="eyebrow mb-4">Contact</p>
         <h2 className="font-display font-semibold text-3xl md:text-5xl tracking-tight max-w-2xl">
-          Building something in AI? I\u2019d like to hear about it.
+          Building something in AI? I'd like to hear about it.
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-10">

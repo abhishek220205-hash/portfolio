@@ -1,4 +1,4 @@
-import { profile } from '@/data/projects';
+import { profile, certifications } from '@/data/projects';
 
 export default function About() {
   return (
@@ -30,6 +30,12 @@ export default function About() {
               <dt className="text-signal-soft">status</dt>
               <dd className="mt-1">Juggling two hackathon builds in parallel, most weeks</dd>
             </div>
+            {certifications.map((cert) => (
+              <div key={cert.name}>
+                <dt className="text-signal-soft">certified</dt>
+                <dd className="mt-1">{cert.name} — {cert.issuer}, {cert.date}</dd>
+              </div>
+            ))}
           </dl>
         </div>
       </div>

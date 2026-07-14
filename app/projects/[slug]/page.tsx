@@ -49,9 +49,14 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         </p>
 
         <div className="flex gap-6 mt-8 font-mono text-sm">
-          <a href={project.repoUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-signal">
-            View repository
-          </a>
+          {project.repoUrl && (
+            <a href={project.repoUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-signal">
+              View repository
+            </a>
+          )}
+          {!project.repoUrl && (
+            <span className="text-muted">Private repo</span>
+          )}
           {project.demoUrl && (
             <a href={project.demoUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-signal">
               Watch demo

@@ -8,8 +8,8 @@ export default function NotFound() {
         Nothing came back on this route.
       </h1>
       <p className="font-body text-lg text-muted max-w-md mx-auto mt-6 leading-relaxed">
-        The pipeline for this page didn\u2019t return a result. It\u2019s not you \u2014
-        the page just isn\u2019t here.
+        The pipeline for this page didn't return a result. It's not you —
+        the page just isn't here.
       </p>
 
       <svg viewBox="0 0 400 40" className="w-full max-w-xs h-10 text-line mx-auto mt-10" aria-hidden="true">
