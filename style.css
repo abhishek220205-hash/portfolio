@@ -1,0 +1,157 @@
+/* ==========================================================
+   Abhishek Kumar — Portfolio
+   Editorial design system. No gradients, no glow, no clutter.
+   Edit tokens below to re-theme the whole site.
+   ========================================================== */
+:root {
+  --bg: #faf7f2;          /* warm paper */
+  --ink: #1a1a18;         /* near-black */
+  --ink-soft: #55524b;    /* secondary text */
+  --line: #d9d3c7;        /* hairlines */
+  --accent: #b34700;      /* burnt sienna */
+  --accent-ink: #8a3700;
+  --max: 1080px;
+  --step-0: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.1rem + 0.7vw, 1.6rem);
+  --step-2: clamp(1.7rem, 1.4rem + 1.6vw, 2.6rem);
+  --step-3: clamp(2.4rem, 1.8rem + 3.4vw, 4.4rem);
+  --space: clamp(4rem, 3rem + 5vw, 8rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: var(--step-0);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono, nav, .tag, .label, .btn, footer, .meta {
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: var(--bg);
+  padding: .6rem 1rem; z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+::selection { background: var(--accent); color: var(--bg); }
+
+a { color: var(--accent-ink); text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+
+/* ---------- Header ---------- */
+header.site {
+  border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; background: var(--bg); z-index: 10;
+}
+header.site .wrap {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: .9rem; padding-bottom: .9rem; gap: 1rem; flex-wrap: wrap;
+}
+.wordmark { font-weight: 700; text-decoration: none; color: var(--ink); letter-spacing: .02em; font-size: .95rem; }
+nav ul { display: flex; gap: 1.4rem; list-style: none; flex-wrap: wrap; }
+nav a { text-decoration: none; color: var(--ink-soft); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
+nav a:hover, nav a[aria-current="page"] { color: var(--accent-ink); }
+
+/* ---------- Hero ---------- */
+.hero { padding: var(--space) 0; border-bottom: 1px solid var(--line); }
+.hero .label { color: var(--accent-ink); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+.hero h1 {
+  font-size: var(--step-3); line-height: 1.06; font-weight: 400;
+  margin: 1rem 0 1.5rem; max-width: 18ch; text-wrap: balance;
+}
+.hero h1 em { font-style: italic; color: var(--accent-ink); }
+.hero p { max-width: 52ch; color: var(--ink-soft); }
+.hero .actions { margin-top: 2.2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block; text-decoration: none; font-size: .85rem;
+  letter-spacing: .05em; padding: .8rem 1.4rem; border: 1px solid var(--ink);
+  color: var(--ink); background: transparent; transition: background .15s, color .15s;
+}
+.btn:hover { background: var(--ink); color: var(--bg); }
+.btn.primary { background: var(--ink); color: var(--bg); }
+.btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+
+/* ---------- Sections ---------- */
+section { padding: var(--space) 0; border-bottom: 1px solid var(--line); }
+.sec-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; }
+.sec-head .num { color: var(--accent-ink); font-size: .85rem; }
+h2 { font-size: var(--step-2); font-weight: 400; }
+h3 { font-size: var(--step-1); font-weight: 400; }
+
+.two-col { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+@media (min-width: 760px) { .two-col { grid-template-columns: 5fr 7fr; gap: 4rem; } }
+.two-col .aside { color: var(--ink-soft); font-size: .95rem; }
+.prose p + p { margin-top: 1rem; }
+
+/* ---------- Facts / experience list ---------- */
+.facts { list-style: none; border-top: 1px solid var(--line); }
+.facts li {
+  display: grid; grid-template-columns: 1fr; gap: .2rem 2rem;
+  padding: 1.1rem 0; border-bottom: 1px solid var(--line);
+}
+@media (min-width: 640px) { .facts li { grid-template-columns: 220px 1fr; } }
+.facts .k { color: var(--accent-ink); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; font-family: ui-monospace, Menlo, Consolas, monospace; padding-top: .25rem; }
+
+/* ---------- Project cards ---------- */
+.projects { display: grid; gap: 1.5rem; }
+.project {
+  border: 1px solid var(--line); padding: 1.8rem;
+  display: flex; flex-direction: column; gap: .8rem;
+  background: #fffdf9; transition: border-color .15s;
+}
+.project:hover { border-color: var(--ink); }
+.project h3 a { text-decoration: none; color: var(--ink); }
+.project h3 a:hover { color: var(--accent-ink); }
+.project .meta { color: var(--ink-soft); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; }
+.tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .4rem; }
+.tag { font-size: .72rem; border: 1px solid var(--line); padding: .2rem .6rem; color: var(--ink-soft); }
+
+.note {
+  border-left: 3px solid var(--accent); padding: .9rem 1.2rem;
+  color: var(--ink-soft); font-size: .95rem; background: #f4efe6; margin-top: 2rem;
+}
+
+/* ---------- Case study ---------- */
+.case h1 { font-size: var(--step-2); font-weight: 400; margin: .8rem 0 1rem; max-width: 24ch; }
+.case section { border-bottom: none; padding: 2.2rem 0 0; }
+.case h2 { font-size: var(--step-1); margin-bottom: .8rem; }
+.case h2::before { content: "— "; color: var(--accent-ink); }
+.case ul { padding-left: 1.2rem; margin-top: .5rem; }
+.case li + li { margin-top: .4rem; }
+
+/* ---------- Contact ---------- */
+.contact-links { list-style: none; margin-top: 1.5rem; }
+.contact-links li { padding: .9rem 0; border-bottom: 1px solid var(--line); display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: baseline; }
+.contact-links .k { min-width: 110px; color: var(--ink-soft); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; font-family: ui-monospace, Menlo, Consolas, monospace; }
+.contact-links a { font-size: var(--step-1); text-decoration: none; word-break: break-word; }
+.contact-links a:hover { text-decoration: underline; }
+
+/* ---------- Footer ---------- */
+footer.site { padding: 2rem 0 3rem; color: var(--ink-soft); font-size: .8rem; border-bottom: none; }
+footer.site .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+/* ---------- Reveal animation (disabled under reduced motion) ---------- */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+/* ---------- 404 ---------- */
+.err { min-height: 55vh; display: flex; flex-direction: column; justify-content: center; }
+.err .code { font-size: var(--step-3); color: var(--accent-ink); }

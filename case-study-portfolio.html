@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Case study: This portfolio, spec-first — Abhishek Kumar</title>
+  <meta name="description" content="How Abhishek Kumar scoped, briefed and quality-checked his own portfolio site — a case study in spec-first building." />
+  <meta property="og:title" content="Case study: This portfolio, spec-first — Abhishek Kumar" />
+  <meta property="og:description" content="From a detailed written spec to a shipped, accessible static site." />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site">
+    <div class="wrap">
+      <a class="wordmark" href="index.html">ABHISHEK KUMAR</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects" aria-current="page">Projects</a></li>
+          <li><a href="index.html#capabilities">Capabilities</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="case wrap">
+    <div class="hero" style="border-bottom:none;">
+      <p class="label">Case study · 2026 · Personal site</p>
+      <h1>This portfolio, spec-first</h1>
+      <p class="meta">Role: product owner &amp; QA · Stack: HTML, CSS, JavaScript</p>
+    </div>
+
+    <section>
+      <h2>Problem</h2>
+      <p>
+        As a second-year CSE student, I needed a professional web presence for
+        recruiters and potential clients — but I had no shipped projects yet.
+        The common answer is to pad a portfolio with invented work. I decided
+        the site itself would be the first project, built to a written spec,
+        with a hard rule: nothing fabricated.
+      </p>
+    </section>
+
+    <section>
+      <h2>Target user</h2>
+      <p>
+        Recruiters screening internship candidates, and founders or clients
+        considering a small project. Both skim fast, read on phones, and are
+        allergic to inflated claims.
+      </p>
+    </section>
+
+    <section>
+      <h2>My role</h2>
+      <p>
+        I wrote the full product brief and acted as owner and reviewer:
+        defining the goal, audience, required sections, technical constraints
+        (responsive layout, reduced-motion support, semantic HTML, keyboard
+        navigation, SEO and social metadata) and content rules, then reviewing
+        the build against that brief. Implementation was done with AI
+        assistance under my direction.
+      </p>
+    </section>
+
+    <section>
+      <h2>Process</h2>
+      <ul>
+        <li>Wrote a detailed spec first: sections, states, accessibility, and explicit "do not" rules (no fake testimonials, stats, or projects).</li>
+        <li>Chose plain HTML/CSS/JS over Next.js — no build step, free hosting, and content anyone can edit in a text editor.</li>
+        <li>Defined a small design system: two type families, one accent colour, hairline dividers, a single spacing scale.</li>
+        <li>Reviewed the result against the brief: link checks, mobile layout, keyboard navigation, honest copy.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Key decisions</h2>
+      <ul>
+        <li><strong>Honesty as a feature.</strong> An empty-but-truthful projects section, with a visible note explaining it, instead of filler.</li>
+        <li><strong>Simplest stack that works.</strong> Static files beat a framework when there's nothing dynamic to render.</li>
+        <li><strong>Editorial, not "AI-modern".</strong> No gradients, no glowing cards — serif headlines, monospace labels, warm paper background.</li>
+        <li><strong>Motion is optional.</strong> Scroll reveals are skipped entirely for users who prefer reduced motion.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Final result</h2>
+      <p>
+        A fast, dependency-free, three-page static site: home, this case
+        study, and a custom 404. Every claim on it is true, every link works,
+        and adding a future project means copying one HTML block and one page.
+      </p>
+    </section>
+
+    <section>
+      <h2>What I learned</h2>
+      <p>
+        Constraints written down early save rework later — the "no invention"
+        rule shaped every section. And a clear brief is a skill in itself:
+        the better the spec, the less correction the build needed.
+      </p>
+      <p style="margin-top:2.5rem;"><a href="index.html#projects">← Back to all projects</a></p>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© 2026 Abhishek Kumar</span>
+      <span>Delhi, India · B.Tech CSE ’28</span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
